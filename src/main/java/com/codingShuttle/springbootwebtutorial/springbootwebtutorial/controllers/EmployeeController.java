@@ -2,7 +2,6 @@ package com.codingShuttle.springbootwebtutorial.springbootwebtutorial.controller
 
 
 import com.codingShuttle.springbootwebtutorial.springbootwebtutorial.dto.EmployeeDTO;
-import com.codingShuttle.springbootwebtutorial.springbootwebtutorial.entities.EmployeeEntity;
 import com.codingShuttle.springbootwebtutorial.springbootwebtutorial.services.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
