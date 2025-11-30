@@ -31,4 +31,7 @@ public class EmployeeEntity {
 
     }
 
+
+    public void setId(Long employeeId) {
+    }
 }
