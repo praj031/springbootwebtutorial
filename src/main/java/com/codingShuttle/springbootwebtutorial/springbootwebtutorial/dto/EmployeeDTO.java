@@ -1,6 +1,8 @@
 package com.codingShuttle.springbootwebtutorial.springbootwebtutorial.dto;
 
+import com.codingShuttle.springbootwebtutorial.springbootwebtutorial.annotations.EmployeeRoleValidation;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +16,31 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class EmployeeDTO {
     //DTO Data transfer Object
+    private Long id;
 
+    @NotBlank(message = "Name of the employee cannot be blank")
+    @Size(min = 3, max = 10, message = "Number of characters in name should be in the range: [3, 10]")
+    private String name;
+
+    @NotBlank(message = "Email of the employee cannot be blank")
+    @Email(message = "Email should be a valid email")
+    private String email;
+
+    @NotNull(message = "Age of the employee cannot be blank")
+    @Max(value = 80, message = "Age of Employee cannot be greater than 80")
+    @Min(value = 18, message = "Age of Employee cannot be less than 18")
+    private Integer age;
+
+    //@NotBlank(message = "Role of the employee cannot be blank")
+    //@Pattern(regexp = "^(ADMIN|USER)$", message = "Role of Employee can be USER or ADMIN")
+    @EmployeeRoleValidation(message = "Please give the correct role")
+    private String role; //ADMIN, USER
+
+    private LocalDate dateOfJoining;
+    //@JsonProperty("isActive")
+    private Boolean isActive;
+
+    /*
     private Long id;
     private String name;
     private String email;
@@ -25,7 +51,7 @@ public class EmployeeDTO {
 
 
     //Since we are using lombok import we don't need to define the getter and setter and constructor
-/*
+
     //Default Constructor
     public EmployeeDTO(){
 
