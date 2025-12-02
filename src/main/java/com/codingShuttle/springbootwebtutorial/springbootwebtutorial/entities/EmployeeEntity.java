@@ -3,6 +3,7 @@ package com.codingShuttle.springbootwebtutorial.springbootwebtutorial.entities;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "employees")
 public class EmployeeEntity {
     //This is the class where we deifine our database things and by making @Entity we tell our compiler that the following class will link to JDBC and alll the process
@@ -28,11 +30,11 @@ public class EmployeeEntity {
     private String role;
 
     //Default Constructor
-    public EmployeeEntity(){
+//    public EmployeeEntity(){
+//
+//    }
 
-    }
 
-
-    public void setId(Long employeeId) {
-    }
+//    public void setId(Long employeeId) {
+//    }
 }

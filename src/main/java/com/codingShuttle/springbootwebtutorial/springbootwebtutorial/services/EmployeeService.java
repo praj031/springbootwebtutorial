@@ -128,7 +128,10 @@ public class EmployeeService {
     public EmployeeDTO updateEmployeeById(Long employeeId, EmployeeDTO employeeDTO) {
         isExistsByEmployeeId(employeeId);
         EmployeeEntity employeeEntity = modelMapper.map(employeeDTO, EmployeeEntity.class);
-        employeeEntity.setId(employeeId);
+        //Due to this if the employeeID not exsits it will create a new one.
+        if(employeeRepository.findById(employeeId).isPresent()){
+            employeeEntity.setId(employeeId);
+        }
         EmployeeEntity savedEmployeeEntity = employeeRepository.save(employeeEntity);
         return modelMapper.map(savedEmployeeEntity, EmployeeDTO.class);
     }
