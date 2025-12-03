@@ -1,7 +1,5 @@
 package com.codingShuttle.springbootwebtutorial.springbootwebtutorial.advice;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.time.LocalDateTime;
