@@ -8,6 +8,8 @@ public class SpringbootwebtutorialApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootwebtutorialApplication.class, args);
+
+        //Demo git check in, just to test the usage of git via local terminal
 	}
 
 }
